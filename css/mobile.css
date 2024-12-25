@@ -126,7 +126,6 @@ ul.navbar {
 
 .display {
   visibility: visible;
-  animation: fadeIn 2s;
 }
 
 @keyframes fadeIn {
@@ -189,8 +188,6 @@ p {
   font-weight: normal;
   line-height: 21px;
   letter-spacing: -0.01em;
-  animation-duration: 3s;
-  animation-name: slide-in;
 }
 
 @keyframes slide-in {
