@@ -339,25 +339,28 @@
 
     const experiences = [
       {
-        title: 'Senior Software Engineer',
-        company: 'TechCorp Inc.',
-        period: '2020 - Present',
-        description: 'Led a team of 5 engineers to develop a scalable microservices architecture. Improved system performance by 40% through optimization techniques. Implemented CI/CD pipelines reducing deployment time by 70%.',
-        skills: ['Node.js', 'AWS', 'Kubernetes', 'React', 'TypeScript']
+        title: 'Senior Backend Engineer',
+        company: 'Quidax',
+        period: '2023 - Present',
+        url: 'https://www.quidax.io/',
+        description: 'Led a team of 5 engineers to develop a scalable microservices architecture. Improved system performance by 40% through optimization techniques. Implemented Ditributed data processing pipelines reducing server workload time by 70%.',
+        skills: ['Ruby on Rails', 'AWS', 'MySQL', 'React', 'Redis', 'AMQP', 'Pusher', 'GraphQL', 'GO']
+      },
+      {
+        title: 'Backend Engineer',
+        company: 'Quidax',
+        period: '2022 - 2023',
+        url: 'https://www.quidax.io/',
+        description: 'Developed and maintained enterprise applications using Ruby on Rails. Designed and implemented RESTful APIs serving millions of requests daily. Mentored junior developers and conducted code reviews.',
+        skills: ['Ruby on Rails', 'AWS', 'MySQL', 'React', 'Redis', 'AMQP', 'Pusher', 'REST API']
       },
       {
         title: 'Software Engineer',
-        company: 'InnovateSoft',
-        period: '2017 - 2020',
-        description: 'Developed and maintained enterprise applications using React and Java Spring Boot. Designed and implemented RESTful APIs serving millions of requests daily. Mentored junior developers and conducted code reviews.',
-        skills: ['Java', 'Spring Boot', 'React', 'PostgreSQL', 'Docker']
-      },
-      {
-        title: 'Junior Developer',
-        company: 'StartUp Labs',
-        period: '2015 - 2017',
-        description: 'Built and maintained web applications using Python and Django. Collaborated with designers to implement responsive UIs. Automated testing processes reducing bugs by 30%.',
-        skills: ['Python', 'Django', 'JavaScript', 'MySQL']
+        company: 'Appzone',
+        period: '2019 -  2022',
+        url: 'https://appzonegroup.com/',
+        description: 'Built and maintained web applications using C#, MVC.NET and ASP.NET. Collaborated with business analysts to implement responsive UIs and banking solutions. Automated Loan disbursement processing increasing efficiency by 80%.',
+        skills: ['C#', 'Javascript', 'MSSQL', 'Ext.js', 'SOAP', 'REST API', 'Azure', 'Entity Framework']
       }
     ];
 
@@ -407,7 +410,7 @@
         expElement.innerHTML = `
                     <div class="md:w-1/3">
                         <h3 class="text-xl font-bold text-gray-900 dark:text-white">${exp.title}</h3>
-                        <p class="text-primary-600 dark:text-primary-400 font-medium">${exp.company}</p>
+                        <p class="text-primary-600 dark:text-primary-400 font-medium"><a class="hover:text-gray-500" href=${exp.url}>${exp.company}</a></p>
                         <p class="text-gray-500 dark:text-gray-400 text-sm mt-1">${exp.period}</p>
                     </div>
                     <div class="md:w-2/3">
