@@ -1,255 +1,500 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="utf-8" />
-<title>Iyadi Cyril Osita-Home page</title>
-<meta name="viewport" content="width=device-width,initial-scale=1.0" />
-<link rel="stylesheet" href="css/imageGallery.css" />
-<link rel="stylesheet" href="css/mobile.css" />
-<link rel="stylesheet" href="css/desktop.css" />
-<link rel="stylesheet" href="css/stylesheet.css" />
-<script src="scripts/export.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>John Doe | Senior Software Engineer</title>
+  <base target="_self">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@preline/preline@2.0.0/dist/preline.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              200: '#bae6fd',
+              300: '#7dd3fc',
+              400: '#38bdf8',
+              500: '#0ea5e9',
+              600: '#0284c7',
+              700: '#0369a1',
+              800: '#075985',
+              900: '#0c4a6e',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
 
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-4WPJJL32RL"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    .animate-fade-in {
+      animation: fadeIn 0.6s ease-out forwards;
+    }
 
-  gtag('config', 'G-4WPJJL32RL');
-</script>
+    .delay-100 {
+      animation-delay: 0.1s;
+    }
+
+    .delay-200 {
+      animation-delay: 0.2s;
+    }
+
+    .delay-300 {
+      animation-delay: 0.3s;
+    }
+
+    .delay-400 {
+      animation-delay: 0.4s;
+    }
+
+    .delay-500 {
+      animation-delay: 0.5s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+
+    .skill-pill:hover {
+      background-color: #0ea5e9;
+      color: white;
+    }
+  </style>
 </head>
-<body onload="loadProjects()">
 
-<div class="container d-flex">
-<div class="body-img-div"><img src="Images/geometry.png" alt=""></div>
-<header class="header fixed d-flex">  
-  <nav class="icon">
-    <ul class="navbar">
-      <li class="header-img" id="Hamburger"><img src="Images/ic_menu.png" tabindex="0"  alt="view menu"></li>    
-      <li tabindex="0"><a href="#landing-form">Hello</a></li>    
-      <li tabindex="0"><a href="#project-forms">Portfolio</a></li>    
-      <li tabindex="0"><a href="#about-form">About</a></li>    
-      <li tabindex="0"><a href="#contact-form">Contact</a></li>    
-    </ul>
-  </nav>
-</header>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300">
+  <div class="min-h-screen flex flex-col">
+    <!-- Header -->
+    <header
+      class="sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
+      <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16 items-center">
+          <div class="flex items-center">
+            <a href="#" class="text-xl font-bold text-primary-600 dark:text-primary-400" id="logo">OCI</a>
+          </div>
+          <div class="hidden md:flex space-x-8">
+            <a href="#about"
+              class="nav-link text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">About</a>
+            <a href="#experience"
+              class="nav-link text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Experience</a>
+            <a href="#projects"
+              class="nav-link text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Projects</a>
+            <a href="#contact"
+              class="nav-link text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Contact</a>
+          </div>
+          <div class="flex items-center space-x-4">
+            <button id="theme-toggle"
+              class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+              <i class="fas fa-moon dark:hidden"></i>
+              <i class="fas fa-sun hidden dark:block"></i>
+            </button>
+            <button id="mobile-menu-button"
+              class="md:hidden p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+              <i class="fas fa-bars"></i>
+            </button>
+          </div>
+        </div>
+      </nav>
 
-
-  <div class="mobile-nav d-flex" id="mobile-nav">    
-    <div class="mobile-nav-top d-flex">
-      <img src="svg/mobile-nav-image-top-left.svg" class="not-cross-img" alt="">
-      <div class="cross-img-div"><img src="svg/cross.svg" tabindex="0" id="cancel-img" class="cross-img" alt="close menu"></div>
-    </div>
-    <div class="mobile-nav-list d-flex">
-      <ul class="mobile-nav-menu-list d-flex">
-        <li tabindex="0">
-          <div class="mobile-nav-list-title"><a href="#landing-form">Hello</a></div>
-        </li>
-        <li tabindex="0">
-          <div class="mobile-nav-list-title margin-top"><a href="#project-forms">Portfolio</a></div>       
-        </li>
-        <li tabindex="0">
-          <div class="mobile-nav-list-title margin-top"><a href="#about-form">About</a></div>   
-        </li>
-        <li tabindex="0">
-          <div class="mobile-nav-list-title margin-top"><a href="#contact-form">Contact</a></div> 
-        </li>
-      </ul>
-    </div>  
-    <div class="mobile-nav-bottom">
-      <img src="svg/mobile-nav-image-bottom.svg" alt="">     
-    </div>
-  </div>
-
-
-
-<div class="flex-landing-form">
-  <section class="content d-flex landing-form" id="landing-form">
-
-    <header>
-      <h1 class="h1-style">Iyadi<br>Osita Cyril</h1>   
+      <!-- Mobile menu -->
+      <div id="mobile-menu"
+        class="hidden md:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
+        <div class="px-4 py-3 space-y-3">
+          <a href="#about"
+            class="block nav-link text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">About</a>
+          <a href="#experience"
+            class="block nav-link text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Experience</a>
+          <a href="#projects"
+            class="block nav-link text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Projects</a>
+          <a href="#contact"
+            class="block nav-link text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Contact</a>
+        </div>
+      </div>
     </header>
-  
-    <p>
-      Hello! I am a software developer! I can help you build a product, 
-      feature or website. Take a look of my works. If you like what you 
-      see and have a project you need coded, don’t hesitate and contact me.
-    </p> 
-  
-    <button class="collaboration-button" type="button"  onclick="window.location.href='#contact-form'"><span class="collaboration-button-span">Start collaboration</span></button>
 
-    <div class="landing-form-image">
-      <img src="Images/image_dots.png" class="blockImage" alt="">
-    </div>
-  </section>
-  
-  <div class="img-float-right">
-    <img src="svg/image_geometry_2.svg" class="blockImage" alt="">
+    <main class="flex-grow">
+      <!-- Hero Section -->
+      <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div class="space-y-6 animate-fade-in">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white">
+              Hi, I'm <span class="text-primary-600 dark:text-primary-400">Osita Cyril Iyadi</span>
+            </h1>
+            <h2 class="text-2xl md:text-3xl font-semibold text-gray-700 dark:text-gray-300">
+              Senior Software Engineer
+            </h2>
+            <p class="text-lg text-gray-600 dark:text-gray-400">
+              I build scalable, performant, distributed applications with modern technologies.
+              With 5+ years of experience, I specialize in full-stack development (Backend Heavy)
+              and cloud architecture.
+            </p>
+            <div class="flex space-x-4">
+              <a href="#contact"
+                class="inline-flex items-center px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-colors">
+                Contact Me
+              </a>
+              <a href="#projects"
+                class="inline-flex items-center px-6 py-3 border border-gray-300 dark:border-gray-600 hover:border-primary-600 dark:hover:border-primary-400 font-medium rounded-lg transition-colors">
+                View Projects
+              </a>
+            </div>
+          </div>
+          <div class="animate-fade-in delay-200">
+            <div class="relative w-full aspect-square max-w-md mx-auto">
+              <div class="absolute inset-0 bg-gradient-to-br from-primary-400 to-primary-600 rounded-2xl rotate-6">
+              </div>
+              <img
+                src="https://res.cloudinary.com/dj7y9zirl/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1750137997/profile.jpg"
+                alt="Profile" class="relative w-full h-full object-cover rounded-2xl shadow-xl">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills Section -->
+      <section class="py-16 bg-gray-100 dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-12 animate-fade-in">
+            <h2 class="text-3xl font-bold text-gray-900 dark:text-white">Technical Skills</h2>
+            <p class="mt-4 text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+              I've worked with a variety of technologies across the full stack
+            </p>
+          </div>
+
+          <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 animate-fade-in delay-100">
+            <!-- Skills will be populated by JavaScript -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience Section -->
+      <section id="experience" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center mb-16 animate-fade-in">
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white">Work Experience</h2>
+          <p class="mt-4 text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            My professional journey and key accomplishments
+          </p>
+        </div>
+
+        <div class="space-y-12">
+          <!-- Experience items will be populated by JavaScript -->
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects" class="py-20 bg-gray-100 dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-16 animate-fade-in">
+            <h2 class="text-3xl font-bold text-gray-900 dark:text-white">Featured Projects</h2>
+            <p class="mt-4 text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+              A selection of my most significant work
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Project cards will be populated by JavaScript -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center mb-16 animate-fade-in">
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white">Get In Touch</h2>
+          <p class="mt-4 text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            Have a project in mind or want to connect? Feel free to reach out!
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12">
+          <div class="space-y-6 animate-fade-in">
+            <div class="flex items-start space-x-4">
+              <div class="p-3 bg-primary-100 dark:bg-primary-900/30 rounded-lg">
+                <i class="fas fa-envelope text-primary-600 dark:text-primary-400 text-xl"></i>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold">Email</h3>
+                <p class="text-gray-600 dark:text-gray-400">john.doe@example.com</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <div class="p-3 bg-primary-100 dark:bg-primary-900/30 rounded-lg">
+                <i class="fas fa-phone-alt text-primary-600 dark:text-primary-400 text-xl"></i>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold">Phone</h3>
+                <p class="text-gray-600 dark:text-gray-400">+1 (555) 123-4567</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <div class="p-3 bg-primary-100 dark:bg-primary-900/30 rounded-lg">
+                <i class="fas fa-map-marker-alt text-primary-600 dark:text-primary-400 text-xl"></i>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold">Location</h3>
+                <p class="text-gray-600 dark:text-gray-400">San Francisco, CA</p>
+              </div>
+            </div>
+            <div class="flex space-x-4 pt-4">
+              <a href="#"
+                class="p-3 bg-gray-200 dark:bg-gray-700 hover:bg-primary-600 hover:text-white dark:hover:bg-primary-600 rounded-full transition-colors">
+                <i class="fab fa-github text-xl"></i>
+              </a>
+              <a href="#"
+                class="p-3 bg-gray-200 dark:bg-gray-700 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 rounded-full transition-colors">
+                <i class="fab fa-linkedin-in text-xl"></i>
+              </a>
+              <a href="#"
+                class="p-3 bg-gray-200 dark:bg-gray-700 hover:bg-blue-400 hover:text-white dark:hover:bg-blue-400 rounded-full transition-colors">
+                <i class="fab fa-twitter text-xl"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="animate-fade-in delay-100">
+            <form class="space-y-6">
+              <div>
+                <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Name</label>
+                <input type="text" id="name"
+                  class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-800 dark:text-white transition-colors">
+              </div>
+              <div>
+                <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Email</label>
+                <input type="email" id="email"
+                  class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-800 dark:text-white transition-colors">
+              </div>
+              <div>
+                <label for="message"
+                  class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Message</label>
+                <textarea id="message" rows="5"
+                  class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-800 dark:text-white transition-colors"></textarea>
+              </div>
+              <button type="submit"
+                class="w-full px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-colors">
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-8">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="mb-4 md:mb-0">
+            <p>&copy; 2025 Osita Cyril Iyadi. All rights reserved.</p>
+          </div>
+          <div class="flex space-x-6">
+            <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+            <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
   </div>
-  
-</div>
 
-<section class="desktop-project-section" id="project-forms">
-  <div class="project-forms-row">
-    <header>
-      <h2 class="h1-style">Projects</h2>   
-    </header>
-    <div class="landing-form-image">
-      <img src="Images/image_dots.png" class="blockImage" alt="">
-    </div>
-    <div class="project-row-card" id="desktop-project-1"></div>
-  </div>
+  <script>
+    // Data arrays
+    const skills = [
+      { name: 'JavaScript', icon: 'fab fa-js' },
+      { name: 'Ruby', icon: 'fas fa-gem' },
+      { name: 'React', icon: 'fab fa-react' },
+      { name: 'GO', icon: 'fa-brands fa-golang' },
+      { name: 'Python', icon: 'fab fa-python' },
+      { name: 'Rails', icon: 'fas fa-gem' },
+      { name: 'AWS', icon: 'fab fa-aws' },
+      { name: 'Docker', icon: 'fab fa-docker' },
+      { name: 'Kubernetes', icon: 'fas fa-cubes' },
+      { name: 'GraphQL', icon: 'fas fa-project-diagram' },
+      { name: 'PostgreSQL', icon: 'fas fa-database' },
+      { name: 'MongoDB', icon: 'fas fa-database' },
+      { name: 'Git', icon: 'fab fa-git-alt' },
+      { name: 'CI/CD', icon: 'fas fa-code-branch' },
+      { name: 'Azure', icon: 'fas fa-cloud' },
+      { name: 'Serverless', icon: 'fas fa-bolt' },
+      { name: 'Microservices', icon: 'fas fa-network-wired' },
+      { name: 'REST APIs', icon: 'fas fa-server' }
+    ];
 
-  <div class="desktop-version-project-2-card">   
-    <div class="float-div hide" id="desktop-project-2"></div> 
-  </div>
+    const experiences = [
+      {
+        title: 'Senior Software Engineer',
+        company: 'TechCorp Inc.',
+        period: '2020 - Present',
+        description: 'Led a team of 5 engineers to develop a scalable microservices architecture. Improved system performance by 40% through optimization techniques. Implemented CI/CD pipelines reducing deployment time by 70%.',
+        skills: ['Node.js', 'AWS', 'Kubernetes', 'React', 'TypeScript']
+      },
+      {
+        title: 'Software Engineer',
+        company: 'InnovateSoft',
+        period: '2017 - 2020',
+        description: 'Developed and maintained enterprise applications using React and Java Spring Boot. Designed and implemented RESTful APIs serving millions of requests daily. Mentored junior developers and conducted code reviews.',
+        skills: ['Java', 'Spring Boot', 'React', 'PostgreSQL', 'Docker']
+      },
+      {
+        title: 'Junior Developer',
+        company: 'StartUp Labs',
+        period: '2015 - 2017',
+        description: 'Built and maintained web applications using Python and Django. Collaborated with designers to implement responsive UIs. Automated testing processes reducing bugs by 30%.',
+        skills: ['Python', 'Django', 'JavaScript', 'MySQL']
+      }
+    ];
 
-  <div class="mobile-version-project-cards">
-    <header>
-      <h2 class="h1-style margin-left">Projects</h2>   
-    </header> 
-    <div id="mobile-project-1"></div>
-    <div id="mobile-project-2"></div> 
-    <div id="mobile-project-3"></div>
-    <div id="mobile-project-4"></div>
-    <div id="mobile-project-5"></div>
-    <div id="mobile-project-6"></div>
-  </div>
+    const projects = [
+      {
+        title: 'Cloud Migration Platform',
+        description: 'A platform to automate migration of legacy systems to cloud infrastructure with minimal downtime.',
+        technologies: ['AWS', 'Terraform', 'Kubernetes', 'Node.js'],
+        image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
+        link: '#'
+      },
+      {
+        title: 'E-commerce Analytics Dashboard',
+        description: 'Real-time analytics dashboard for e-commerce businesses with custom reporting and insights.',
+        technologies: ['React', 'GraphQL', 'MongoDB', 'D3.js'],
+        image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
+        link: '#'
+      },
+      {
+        title: 'AI-Powered Code Review Tool',
+        description: 'Machine learning tool that analyzes code quality and suggests improvements during pull requests.',
+        technologies: ['Python', 'TensorFlow', 'GitHub API', 'FastAPI'],
+        image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
+        link: '#'
+      }
+    ];
 
-</section>
+    // DOM manipulation
+    document.addEventListener('DOMContentLoaded', function () {
+      // Populate skills
+      const skillsContainer = document.querySelector('.grid-cols-2.md\\:grid-cols-3.lg\\:grid-cols-6');
+      skills.forEach(skill => {
+        const skillElement = document.createElement('div');
+        skillElement.className = 'flex flex-col items-center p-4 bg-white dark:bg-gray-700 rounded-lg shadow-sm hover:shadow-md transition-all';
+        skillElement.innerHTML = `
+                    <i class="${skill.icon} text-3xl text-primary-600 dark:text-primary-400 mb-2"></i>
+                    <span class="text-sm font-medium">${skill.name}</span>
+                `;
+        skillsContainer.appendChild(skillElement);
+      });
 
-<div class="mobile-pop-up" id="mobile-pop-up">
-  <a class="prev" onclick="plusSlides(-1)">❮</a>
-  <a class="next" onclick="plusSlides(1)">❯</a>
-</div>
+      // Populate experience
+      const experienceContainer = document.querySelector('#experience .space-y-12');
+      experiences.forEach((exp, index) => {
+        const expElement = document.createElement('div');
+        expElement.className = `flex flex-col md:flex-row gap-8 animate-fade-in delay-${(index + 1) * 100}`;
+        expElement.innerHTML = `
+                    <div class="md:w-1/3">
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white">${exp.title}</h3>
+                        <p class="text-primary-600 dark:text-primary-400 font-medium">${exp.company}</p>
+                        <p class="text-gray-500 dark:text-gray-400 text-sm mt-1">${exp.period}</p>
+                    </div>
+                    <div class="md:w-2/3">
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">${exp.description}</p>
+                        <div class="flex flex-wrap gap-2">
+                            ${exp.skills.map(skill => `<span class="skill-pill px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded-full text-sm transition-colors">${skill}</span>`).join('')}
+                        </div>
+                    </div>
+                `;
+        experienceContainer.appendChild(expElement);
+      });
 
-<div class="about-form-and-skill-form">
-  <section class="content d-flex" id="about-form">
+      // Populate projects
+      const projectsContainer = document.querySelector('#projects .grid');
+      projects.forEach((project, index) => {
+        const projectElement = document.createElement('div');
+        projectElement.className = `project-card bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 animate-fade-in delay-${(index + 1) * 100}`;
+        projectElement.innerHTML = `
+                    <img src="${project.image}" alt="${project.title}" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">${project.title}</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">${project.description}</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            ${project.technologies.map(tech => `<span class="px-2 py-1 bg-gray-100 dark:bg-gray-600 rounded text-xs">${tech}</span>`).join('')}
+                        </div>
+                        <a href="${project.link}" class="inline-flex items-center text-primary-600 dark:text-primary-400 hover:text-primary-800 dark:hover:text-primary-300 font-medium transition-colors">
+                            View Project <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                `;
+        projectsContainer.appendChild(projectElement);
+      });
 
-    <header>
-      <h2 class="h1-style">About</h2>   
-    </header>
-  
-    <p>
-      I am a Full-stack web developer who specializes in using Ruby, Ruby on Rails, React-Redux, Javascript, C#, Python, Postgresql and SQL 
-      to build software for businesses. I also studied in a remote software development 
-      school that uses pair programming and real-world projects to teach development.
-    </p> 
-    
-    <button class="download-cv-button d-flex" type="submit" onclick="window.open('http:/\/bit.ly/49P2gm6')"><span class="collaboration-button-span">Get my CV</span><img class="display-first" src="svg/ic_download.svg" alt=""></button>
-  
-  </section>
-  
-  <section class="content d-flex desktop-frame" id="Languages-framework-skills-forms">
-  
-    <div class="cards first d-flex">
-      <header><h3>Languages</h3></header>
-      <ul>
-        <li>Javascript (ES5/ES6)</li>
-        <li>Ruby</li>
-        <li>Python</li>
-        <li>Go</li>
-        <li>C#</li>
-      </ul>   
-        <img src="Images/ic_asterisks.jpg" alt=""/>   
-    </div>  
-  
-    <div class="cards second d-flex">
-      <header><h3>Frameworks</h3></header>
-      <ul>
-        <li>Rspec</li>
-        <li>React</li>
-        <li>Ruby on Rails</li>
-        <li>MVC .Net</li>
-        <li>ASP .Net</li>
-      </ul>   
-      <img src="Images/ic_lamp.jpg" alt=""/>
-      
-    </div>
-  
-    <div class="cards third d-flex">
-      <header><h3>Skills</h3></header>
-      <ul>
-        <li>Linux</li>
-        <li>Docker</li>
-        <li>GitHub</li>
-        <li>GitLAb</li>
-        <li>AWS</li>
-      </ul>    
-      <img src="Images/ic_skills.jpg" alt=""/>    
-    </div>
+      // Theme toggle
+      const themeToggle = document.getElementById('theme-toggle');
+      themeToggle.addEventListener('click', () => {
+        document.documentElement.classList.toggle('dark');
+        localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+      });
 
-    <div class="cards desktop-card-fourth d-flex hide">
-      <img src="Images/image_dots_with_teal.png" alt=""/> 
-    </div>
-  
-  </section>
-</div>
+      // Mobile menu toggle
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
 
-<div class="Desktop-Get-started">
-  <div class="contact-form-image">
-    <header class="header d-flex">
-      <img src="Images/geometry.png" alt="">            
-    </header>  
-  </div>
-  
-  <section class="content d-flex desktop-contact-form" id="contact-form"> 
-    <header class="header d-flex">
-      <h2 class="h1-style">Get started</h2>       
-    </header> 
-    <div class="align-header">      
-      <p>
-        If you'd like to drop a personal message, kindly fill the form, 
-        I am very much excited to here from you.
-      </p> 
-      <form id="get-started-contact-form" action="https://formspree.io/f/xwkawbvd" method="POST">
-        <fieldset class="contact-form-fieldset d-flex">
-          <div class="form-fieldset-labels">
-            <label class="fieldset-label d-flex" for="user_name">
-              Your name
-              <input type="text" id="user_name" required maxlength="30" placeholder="Anastasia" name="user_name">
-            </label>
-            <label class="fieldset-label d-flex" for="user_email">
-              Your email
-              <input type="email" id="user_email" required placeholder="example@email.com" name="user_email">
-            </label>
-          </div>    
-          <label class="fieldset-label textarea d-flex" for="user_message">Message</label>   
-          <textarea class="textarea-text" required id="user_message" name="user_message" maxlength="500" placeholder="Enter your message here..."></textarea>
-          <small id="error-tag" class="form-error"></small>
-          <button id="submit-form-button" class="collaboration-button" type="submit"><span class="collaboration-button-span">Start collaboration</span></button>
-        </fieldset>
-      </form> 
-    </div>
-   
-  </section>
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href');
+          const targetElement = document.querySelector(targetId);
 
-  <div class="contact-form-image-right hide">
-    <header class="header d-flex">
-      <img src="Images/geometry.png" alt="">
-    </header>  
-  </div>
-</div>
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: 'smooth'
+            });
 
+            // Close mobile menu if open
+            if (!mobileMenu.classList.contains('hidden')) {
+              mobileMenu.classList.add('hidden');
+            }
+          }
+        });
+      });
 
-<footer class="d-flex desktop-footer">
-  <button class="footer-get-resume d-flex" type="submit" onclick="window.open('http:/\/bit.ly/49P2gm6')"><span class="collaboration-button-span">Get my Resume</span><img src="Images/Union.png" alt=""></button>
-  <ul class="footer-imagelist d-flex">
-    <li><a><img src="Images/ic_stackoverflow.png" alt="stack overflow logo"></a></li>
-    <li><a href="https://github.com/see-why" target="_blank" rel="noopener noreferrer"><img src="Images/ic_github.png" alt="github logo"></a></li>
-    <li><a href="https://twitter.com/4_see_why" target="_blank" rel="noopener noreferrer"><img src="Images/ic_twitter.png" alt="twitter logo"></a></li>
-    <li><a href="https://www.linkedin.com/in/cyril-iyadi/" target="_blank" rel="noopener noreferrer"><img src="Images/ic_linkedin.png" alt="Linkedin logo"></a></li>
-    <li><a href="https://medium.com/@iyadicy" target="_blank" rel="noopener noreferrer"><img src="Images/ic_medium.png" alt="medium logo"></a></li>
-    <li><a href="https://angel.co/u/cyril-iyadi" target="_blank" rel="noopener noreferrer"><img src="Images/ic_angellist.png" alt="angel list logo"></a></li>
-  </ul>
-</footer>
+      // Form submission
+      const contactForm = document.querySelector('form');
+      if (contactForm) {
+        contactForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+          // Here you would typically send the form data to a server
+          alert('Thank you for your message! I will get back to you soon.');
+          this.reset();
+        });
+      }
 
-</div>
-
-<script src="scripts/portfolio.js"></script>
-
+      // Check for saved theme preference
+      if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    });
+  </script>
 </body>
+
 </html>
