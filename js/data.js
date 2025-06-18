@@ -26,7 +26,7 @@ const experiences = [
     company: 'Quidax',
     period: '2023 - Present',
     url: 'https://www.quidax.io/',
-    description: 'Led a team of 5 engineers to develop a scalable microservices architecture. Improved system performance by 40% through optimization techniques. Implemented Ditributed data processing pipelines reducing server workload time by 70%.',
+    description: 'Led a team of 5 engineers to develop a scalable microservices architecture. Improved system performance by 40% through optimization techniques. Implemented Distributed data processing pipelines reducing server workload time by 70%.',
     skills: ['Ruby on Rails', 'AWS', 'MySQL', 'React', 'Redis', 'AMQP', 'Pusher', 'GraphQL', 'GO']
   },
   {
