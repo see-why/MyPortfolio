@@ -9,6 +9,18 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/@preline/preline@2.0.0/dist/preline.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4WPJJL32RL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-4WPJJL32RL');
+  </script>
+
   <script>
     tailwind.config = {
       darkMode: 'class',
@@ -271,26 +283,34 @@
           </div>
 
           <div class="animate-fade-in delay-100">
-            <form class="space-y-6">
+            <form id="contact-form" class="space-y-6">
               <div>
                 <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Name</label>
-                <input type="text" id="name"
+                <input type="text" id="name" name="name" required
                   class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-800 dark:text-white transition-colors">
               </div>
               <div>
                 <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Email</label>
-                <input type="email" id="email"
+                <input type="email" id="email" name="email" required
                   class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-800 dark:text-white transition-colors">
               </div>
               <div>
                 <label for="message"
                   class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Message</label>
-                <textarea id="message" rows="5"
+                <textarea id="message" name="message" rows="5" required
                   class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-800 dark:text-white transition-colors"></textarea>
               </div>
-              <button type="submit"
-                class="w-full px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-colors">
-                Send Message
+              <div id="form-status" class="hidden"></div>
+              <button type="submit" id="submit-button"
+                class="w-full px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-colors flex items-center justify-center">
+                <span id="button-text">Send Message</span>
+                <svg id="loading-spinner" class="hidden animate-spin ml-2 h-5 w-5 text-white"
+                  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                  <path class="opacity-75" fill="currentColor"
+                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                  </path>
+                </svg>
               </button>
             </form>
           </div>
@@ -382,7 +402,7 @@
       {
         title: 'JWT Auth',
         description: 'A lightweight, modular Ruby on Rails authentication service that leverages JSON Web Tokens (JWT) to provide secure, stateless user authentication and authorization.',
-        technologies: ['Rails', 'JWT', 'Docker', 'Ruby', 'CI/CD'],
+        technologies: ['Rails', 'JWT', 'Docker', 'CI/CD', 'PostgresQL'],
         image: 'https://res.cloudinary.com/dj7y9zirl/image/upload/v1750255826/jwt.jpg',
         link: 'https://github.com/see-why/chill_jwt'
       }
@@ -480,13 +500,53 @@
       });
 
       // Form submission
-      const contactForm = document.querySelector('form');
+      const contactForm = document.getElementById('contact-form');
+      const submitButton = document.getElementById('submit-button');
+      const buttonText = document.getElementById('button-text');
+      const loadingSpinner = document.getElementById('loading-spinner');
+      const formStatus = document.getElementById('form-status');
+
       if (contactForm) {
-        contactForm.addEventListener('submit', function (e) {
+        contactForm.addEventListener('submit', async function (e) {
           e.preventDefault();
-          // Here you would typically send the form data to a server
-          alert('Thank you for your message! I will get back to you soon.');
-          this.reset();
+
+          // Show loading state
+          submitButton.disabled = true;
+          buttonText.textContent = 'Sending...';
+          loadingSpinner.classList.remove('hidden');
+          formStatus.classList.add('hidden');
+
+          try {
+            const formData = {
+              name: document.getElementById('name').value,
+              email: document.getElementById('email').value,
+              message: document.getElementById('message').value
+            };
+
+            emailjs.init('jHNgutk0_Z9moTyyG')
+
+            await emailjs.send('portfolio_email_service', 'portfolio_website_emails', formData);
+
+            // Show success message
+            formStatus.textContent = 'Message sent successfully!';
+            formStatus.className = 'p-4 mb-4 text-sm text-green-700 bg-green-100 rounded-lg dark:bg-green-200 dark:text-green-800';
+            formStatus.classList.remove('hidden');
+
+            // Reset form
+            contactForm.reset();
+          } catch (error) {
+            // Show error message
+            formStatus.textContent = 'Failed to send message. Please try again.';
+            formStatus.textContent = `Error: ${error}`;
+            formStatus.className = 'p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800';
+            formStatus.classList.remove('hidden');
+            console.error('Error:', error);
+          } finally {
+            // Reset button state
+            submitButton.disabled = false;
+            buttonText.textContent = 'Send Message';
+            loadingSpinner.classList.add('hidden');
+          }
         });
       }
 
