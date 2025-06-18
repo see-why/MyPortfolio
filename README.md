@@ -3,7 +3,7 @@
 # MyPortfolio
 A professional brochure of my several completed projects, starting with a mobile version skeleton
 
-![screenshot](/LandingPage.PNG)
+![screenshot](https://res.cloudinary.com/dj7y9zirl/image/upload/v1750265603/portfolio_website_homepage.png)
 
 ## Built With
 
