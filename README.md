@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# MyPortofolio
+# MyPortfolio
 A professional brochure of my several completed projects, starting with a mobile version skeleton
 
 ![screenshot](/LandingPage.PNG)
