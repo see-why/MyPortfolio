@@ -691,6 +691,8 @@
         document.getElementById('terms-container').classList.add('hidden');
         // Show the requested container
         document.getElementById(containerId).classList.remove('hidden');
+        // Scroll to top
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       }
 
       function restoreHome() {
