@@ -1,4 +1,4 @@
-![](https://img.shields.io/badge/Microverse-blueviolet)
+![](https://img.shields.io/badge/Microverse-blueviolet) [![Deploy Portfolio](https://github.com/see-why/MyPortfolio/actions/workflows/deploy.yml/badge.svg)](https://github.com/see-why/MyPortfolio/actions/workflows/deploy.yml)
 
 # MyPortfolio
 A professional brochure of my several completed projects, starting with a mobile version skeleton
