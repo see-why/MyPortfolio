@@ -1,18 +1,20 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# MyPortofolio
+# MyPortfolio
 A professional brochure of my several completed projects, starting with a mobile version skeleton
 
-![screenshot](/LandingPage.PNG)
+![screenshot](https://res.cloudinary.com/dj7y9zirl/image/upload/v1750265603/portfolio_website_homepage.png)
 
 ## Built With
 
 - Html
 - CSS
+- Javascript
+- Bash
 
 ## Live Demo
 
-[Live Demo Link](https://see-why.github.io/MyPortofolio/)
+[Live Demo Link](https://see-why.github.io/MyPortfolio/)
 
 ## Getting started
 the project comes shipped with linters config for html and css, so ensure you have lighthouse, Webhint
