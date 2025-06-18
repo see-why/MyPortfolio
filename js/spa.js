@@ -61,6 +61,29 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+  // Handle navbar links - restore home if on privacy/terms pages
+  document.querySelectorAll('a[href^="#"]:not(.spa-link)').forEach(link => {
+    link.addEventListener('click', function (e) {
+      const SCROLL_DELAY_MS = 100;
+      // If we're currently on privacy or terms page, restore home first
+      if (window.location.hash === '#privacy' || window.location.hash === '#terms') {
+        e.preventDefault();
+        restoreHome();
+        // Then scroll to the target section after a short delay
+        setTimeout(() => {
+          const targetId = this.getAttribute('href');
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        }, SCROLL_DELAY_MS);
+      }
+    });
+  });
+
   // Listen for hash changes
   window.addEventListener('hashchange', handleHash);
 
