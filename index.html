@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>John Doe | Senior Software Engineer</title>
+  <title>Osita Cyril Iyadi | Senior Software Engineer</title>
   <base target="_self">
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/@preline/preline@2.0.0/dist/preline.min.js"></script>
@@ -352,7 +352,7 @@
         period: '2022 - 2023',
         url: 'https://www.quidax.io/',
         description: 'Developed and maintained enterprise applications using Ruby on Rails. Designed and implemented RESTful APIs serving millions of requests daily. Mentored junior developers and conducted code reviews.',
-        skills: ['Ruby on Rails', 'AWS', 'MySQL', 'React', 'Redis', 'AMQP', 'Pusher', 'REST API']
+        skills: ['Ruby on Rails', 'AWS', 'MySQL', 'React', 'Redis', 'AMQP', 'Pusher', 'REST API', 'Docker']
       },
       {
         title: 'Software Engineer',
@@ -366,11 +366,11 @@
 
     const projects = [
       {
-        title: 'Cloud Migration Platform',
-        description: 'A platform to automate migration of legacy systems to cloud infrastructure with minimal downtime.',
-        technologies: ['AWS', 'Terraform', 'Kubernetes', 'Node.js'],
-        image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
-        link: '#'
+        title: 'Maze Runner',
+        description: 'An interactive Python application that dynamically generates and solves mazes using depth-first search algorithms, featuring real-time visualization of both the maze creation and solving processes.',
+        technologies: ['Python', 'TKinter', 'UnitTest'],
+        image: 'https://res.cloudinary.com/dj7y9zirl/image/upload/v1750252756/maze_runner_havp2o.gif',
+        link: 'https://github.com/see-why/Maze-Runner'
       },
       {
         title: 'E-commerce Analytics Dashboard',
@@ -410,7 +410,7 @@
         expElement.innerHTML = `
                     <div class="md:w-1/3">
                         <h3 class="text-xl font-bold text-gray-900 dark:text-white">${exp.title}</h3>
-                        <p class="text-primary-600 dark:text-primary-400 font-medium"><a class="hover:text-gray-500" href=${exp.url}>${exp.company}</a></p>
+                        <p class="text-primary-600 dark:text-primary-400 font-medium"><a class="hover:text-gray-500" href=${exp.url} target="_blank" rel="noopener noreferrer">${exp.company}</a></p>
                         <p class="text-gray-500 dark:text-gray-400 text-sm mt-1">${exp.period}</p>
                     </div>
                     <div class="md:w-2/3">
@@ -436,7 +436,7 @@
                         <div class="flex flex-wrap gap-2 mb-4">
                             ${project.technologies.map(tech => `<span class="px-2 py-1 bg-gray-100 dark:bg-gray-600 rounded text-xs">${tech}</span>`).join('')}
                         </div>
-                        <a href="${project.link}" class="inline-flex items-center text-primary-600 dark:text-primary-400 hover:text-primary-800 dark:hover:text-primary-300 font-medium transition-colors">
+                        <a href="${project.link}" class="inline-flex items-center text-primary-600 dark:text-primary-400 hover:text-primary-800 dark:hover:text-primary-300 font-medium transition-colors" target="_blank" rel="noopener noreferrer">
                             View Project <i class="fas fa-arrow-right ml-2"></i>
                         </a>
                     </div>
