@@ -662,25 +662,51 @@
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const main = document.querySelector('main.flex-grow');
-      const originalMainHTML = main.innerHTML;
       const privacyTemplate = document.getElementById('privacy-template');
       const termsTemplate = document.getElementById('terms-template');
 
-      function showTemplate(template) {
-        main.innerHTML = '';
-        main.appendChild(template.content.cloneNode(true));
+      // Store original sections for easy restoration
+      const originalSections = Array.from(main.children);
+
+      // Create containers for privacy and terms content
+      const privacyContainer = document.createElement('div');
+      privacyContainer.id = 'privacy-container';
+      privacyContainer.className = 'hidden';
+      privacyContainer.appendChild(privacyTemplate.content.cloneNode(true));
+
+      const termsContainer = document.createElement('div');
+      termsContainer.id = 'terms-container';
+      termsContainer.className = 'hidden';
+      termsContainer.appendChild(termsTemplate.content.cloneNode(true));
+
+      // Add containers to main
+      main.appendChild(privacyContainer);
+      main.appendChild(termsContainer);
+
+      function showTemplate(containerId) {
+        // Hide all original sections
+        originalSections.forEach(section => section.classList.add('hidden'));
+        // Hide other template containers
+        document.getElementById('privacy-container').classList.add('hidden');
+        document.getElementById('terms-container').classList.add('hidden');
+        // Show the requested container
+        document.getElementById(containerId).classList.remove('hidden');
       }
 
       function restoreHome() {
-        main.innerHTML = originalMainHTML;
+        // Show all original sections
+        originalSections.forEach(section => section.classList.remove('hidden'));
+        // Hide template containers
+        document.getElementById('privacy-container').classList.add('hidden');
+        document.getElementById('terms-container').classList.add('hidden');
         window.location.hash = '';
       }
 
       function handleHash() {
         if (window.location.hash === '#privacy') {
-          showTemplate(privacyTemplate);
+          showTemplate('privacy-container');
         } else if (window.location.hash === '#terms') {
-          showTemplate(termsTemplate);
+          showTemplate('terms-container');
         } else {
           restoreHome();
         }
