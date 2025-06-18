@@ -12,7 +12,7 @@ A professional brochure of my several completed projects, starting with a mobile
 
 ## Live Demo
 
-[Live Demo Link](https://see-why.github.io/MyPortofolio/)
+[Live Demo Link](https://see-why.github.io/MyPortfolio/)
 
 ## Getting started
 the project comes shipped with linters config for html and css, so ensure you have lighthouse, Webhint
