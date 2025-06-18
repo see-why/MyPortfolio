@@ -65,7 +65,7 @@ const projects = [
   {
     title: 'JWT Auth',
     description: 'A lightweight, modular Ruby on Rails authentication service that leverages JSON Web Tokens (JWT) to provide secure, stateless user authentication and authorization.',
-    technologies: ['Rails', 'JWT', 'Docker', 'CI/CD', 'PostgresQL'],
+    technologies: ['Rails', 'JWT', 'Docker', 'CI/CD', 'PostgreSQL'],
     image: 'https://res.cloudinary.com/dj7y9zirl/image/upload/v1750255826/jwt.jpg',
     link: 'https://github.com/see-why/chill_jwt'
   }
