@@ -74,9 +74,9 @@ document.addEventListener('DOMContentLoaded', function () {
           const targetId = this.getAttribute('href');
           const targetElement = document.querySelector(targetId);
           if (targetElement) {
-            window.scrollTo({
-              top: targetElement.offsetTop - 80,
-              behavior: 'smooth'
+            targetElement.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
             });
           }
         }, SCROLL_DELAY_MS);
