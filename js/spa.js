@@ -64,6 +64,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // Handle navbar links - restore home if on privacy/terms pages
   document.querySelectorAll('a[href^="#"]:not(.spa-link)').forEach(link => {
     link.addEventListener('click', function (e) {
+      const SCROLL_DELAY_MS = 100;
       // If we're currently on privacy or terms page, restore home first
       if (window.location.hash === '#privacy' || window.location.hash === '#terms') {
         e.preventDefault();
@@ -78,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function () {
               behavior: 'smooth'
             });
           }
-        }, 100);
+        }, SCROLL_DELAY_MS);
       }
     });
   });
