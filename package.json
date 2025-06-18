@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "live-server",
-    "build": "mkdir -p dist && node build.js && cp -r favicon dist/ && cp site.webmanifest dist/ ",
+    "build": "mkdir -p dist && node build.js && cp -r favicon dist/ && cp site.webmanifest dist/ && cp privacy.html dist/ && cp terms.html dist/",
     "deploy": "gh-pages -d dist",
     "dev": "npm run build && live-server dist"
   },
