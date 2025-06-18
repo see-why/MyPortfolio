@@ -131,8 +131,7 @@ document.addEventListener('DOMContentLoaded', function () {
         contactForm.reset();
       } catch (error) {
         // Show error message
-        formStatus.textContent = 'Failed to send message. Please try again.';
-        formStatus.textContent = `Error: ${error}`;
+        formStatus.textContent = `Failed to send message. Please try again. Error: ${error}`;
         formStatus.className = 'p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800';
         formStatus.classList.remove('hidden');
         console.error('Error:', error);
