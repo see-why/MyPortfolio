@@ -528,11 +528,11 @@
             };
 
             // Initialize EmailJS with public key from environment
-            emailjs.init(process.env.EMAILJS_PUBLIC_KEY);
+            emailjs.init("jHNgutk0_Z9moTyyG");
 
             await emailjs.send(
-              process.env.EMAILJS_SERVICE_ID,
-              process.env.EMAILJS_TEMPLATE_ID,
+              "portfolio_email_service",
+              "portfolio_website_emails",
               formData
             );
 
