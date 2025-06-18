@@ -9,6 +9,8 @@ A professional brochure of my several completed projects, starting with a mobile
 
 - Html
 - CSS
+- Javascript
+- Bash
 
 ## Live Demo
 
