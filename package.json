@@ -5,14 +5,23 @@
   "main": "index.js",
   "scripts": {
     "start": "live-server",
-    "build": "mkdir -p dist && cp index.html dist/ && cp -r favicon dist/ && cp site.webmanifest dist/",
-    "deploy": "gh-pages -d dist"
+    "build": "mkdir -p dist && node build.js && cp -r favicon dist/ && cp site.webmanifest dist/ ",
+    "deploy": "gh-pages -d dist",
+    "dev": "npm run build && live-server dist"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "gh-pages": "^6.1.1",
-    "live-server": "^1.2.2"
+    "hint": "^6.2.0",
+    "live-server": "^1.2.2",
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^21.0.0",
+    "stylelint-csstree-validator": "^1.9.0",
+    "stylelint-scss": "^3.21.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.5.0"
   }
 }
