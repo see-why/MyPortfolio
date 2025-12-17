@@ -23,8 +23,16 @@ const skills = [
 const experiences = [
   {
     title: 'Senior Backend Engineer',
+    company: 'Scribd',
+    period: '2025 - Present',
+    url: 'https://www.scribd.com/',
+    description: 'Led the experimentation on the adoption and rollout of Multi Factor Authentication (MFA) across the platform, enhancing user security and reducing unauthorized access by 60%, improving system scalability and maintainability.',
+    skills: ['Ruby on Rails', 'AWS', 'Devkube', 'React', 'Databricks', 'Datadog', 'Auth0', 'Sidekiq', 'AI tools']
+  },
+  {
+    title: 'Senior Backend Engineer',
     company: 'Quidax',
-    period: '2023 - Present',
+    period: '2023 - 2025',
     url: 'https://www.quidax.io/',
     description: 'Led a team of 5 engineers to develop a scalable microservices architecture. Improved system performance by 40% through optimization techniques. Implemented Distributed data processing pipelines reducing server workload time by 70%.',
     skills: ['Ruby on Rails', 'AWS', 'MySQL', 'React', 'Redis', 'AMQP', 'Pusher', 'GraphQL', 'GO']
