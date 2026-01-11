@@ -16,10 +16,10 @@
     "gh-pages": "^6.1.1",
     "hint": "^6.2.0",
     "live-server": "^1.2.2",
-    "stylelint": "^13.13.1",
-    "stylelint-config-standard": "^21.0.0",
-    "stylelint-csstree-validator": "^1.9.0",
-    "stylelint-scss": "^3.21.0"
+    "stylelint": "^16.20.0",
+    "stylelint-config-standard": "^38.0.0",
+    "stylelint-csstree-validator": "^3.0.0",
+    "stylelint-scss": "^6.12.1"
   },
   "dependencies": {
     "dotenv": "^16.5.0"
