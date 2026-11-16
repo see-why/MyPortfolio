@@ -1,16 +1,22 @@
 #!/bin/bash
+# Regenerates the favicon set from favicon.svg (requires ImageMagick 7: `magick`).
+# Render at high density, then resize, so the whole SVG fits each icon.
+set -euo pipefail
 
-# Create favicon directory if it doesn't exist
 mkdir -p favicon
 
-# Convert SVG to different sizes
-convert -background none -size 16x16 favicon.svg favicon/favicon-16x16.png
-convert -background none -size 32x32 favicon.svg favicon/favicon-32x32.png
-convert -background none -size 180x180 favicon.svg favicon/apple-touch-icon.png
-convert -background none -size 192x192 favicon.svg favicon/android-chrome-192x192.png
-convert -background none -size 512x512 favicon.svg favicon/android-chrome-512x512.png
+render() { # size output
+  magick -background none -density 768 favicon.svg -resize "${1}x${1}" "$2"
+}
 
-# Create ICO file (contains both 16x16 and 32x32)
-convert favicon/favicon-16x16.png favicon/favicon-32x32.png favicon/favicon.ico
+render 16 favicon/favicon-16x16.png
+render 32 favicon/favicon-32x32.png
+render 180 favicon/apple-touch-icon.png
+render 192 favicon/android-chrome-192x192.png
+render 512 favicon/android-chrome-512x512.png
 
-echo "Favicon conversion complete! Files are in the favicon directory." 
+# ICO containing 16x16, 32x32 and 48x48
+render 48 /tmp/favicon-48x48.png
+magick favicon/favicon-16x16.png favicon/favicon-32x32.png /tmp/favicon-48x48.png favicon/favicon.ico
+
+echo "Favicon conversion complete! Files are in the favicon directory."
