@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
       <img src="${project.image}" alt="${project.title}" class="w-full h-48 object-cover">
       <div class="p-6 flex flex-col flex-1">
         <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">${project.title}</h3>
-        <p class="text-gray-600 dark:text-gray-300 mb-4">${project.description}</p>
+        <p class="flex-1 text-gray-600 dark:text-gray-300 mb-4">${project.description}</p>
         <div class="flex flex-wrap gap-2 mb-4">
           ${project.technologies.map(tech => `<span class="px-2 py-1 bg-gray-100 dark:bg-gray-600 rounded text-xs">${tech}</span>`).join('')}
         </div>
