@@ -57,6 +57,13 @@ const experiences = [
 
 const projects = [
   {
+    title: 'BananaReel',
+    description: 'A Nollywood review aggregator that scores each film from approved critics and from weighted fan ratings, with phone-verified fan reviews and moderation tools.',
+    technologies: ['Next.js', 'TypeScript', 'Tailwind', 'PostgreSQL'],
+    image: 'assets/bananareel.png',
+    link: 'https://bananareel.ng'
+  },
+  {
     title: 'Shift Case',
     description: 'A VS Code extension that toggles selected text, or the word at the cursor, between UPPERCASE and lowercase with a single keybinding. Published on the VS Code Marketplace.',
     technologies: ['TypeScript', 'VS Code API', 'GitHub Actions'],
