@@ -59,7 +59,7 @@ const projects = [
   {
     title: 'BananaReel',
     description: 'A Nollywood review aggregator that scores each film from approved critics and from weighted fan ratings, with phone-verified fan reviews and moderation tools.',
-    technologies: ['Next.js', 'TypeScript', 'Tailwind', 'PostgreSQL'],
+    technologies: ['Next.js', 'TypeScript', 'Tailwind'],
     image: 'assets/bananareel.png',
     link: 'https://bananareel.ng'
   },
