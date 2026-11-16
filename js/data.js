@@ -57,6 +57,13 @@ const experiences = [
 
 const projects = [
   {
+    title: 'Priority Talent',
+    description: 'A recruiting platform: a recruiter workspace with candidate profiles, in-app CV preview, live messaging and job recommendations, plus a candidate portal for applications, notifications and a referral hub.',
+    technologies: ['Rails API', 'Next.js', 'PostgreSQL', 'WebSockets'],
+    image: 'assets/prioritytalent.jpg',
+    link: 'https://www.prioritytalent.co'
+  },
+  {
     title: 'BananaReel',
     description: 'A Nollywood review aggregator that scores each film from approved critics and from weighted fan ratings, with phone-verified fan reviews and moderation tools.',
     technologies: ['Next.js', 'TypeScript', 'Tailwind'],
