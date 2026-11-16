@@ -37,16 +37,16 @@ document.addEventListener('DOMContentLoaded', function () {
   const projectsContainer = document.querySelector('#projects .grid');
   projects.forEach((project, index) => {
     const projectElement = document.createElement('div');
-    projectElement.className = `project-card bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 animate-fade-in delay-${(index + 1) * 100}`;
+    projectElement.className = `project-card flex flex-col bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 animate-fade-in delay-${(index + 1) * 100}`;
     projectElement.innerHTML = `
       <img src="${project.image}" alt="${project.title}" class="w-full h-48 object-cover">
-      <div class="p-6">
+      <div class="p-6 flex flex-col flex-1">
         <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">${project.title}</h3>
         <p class="text-gray-600 dark:text-gray-300 mb-4">${project.description}</p>
         <div class="flex flex-wrap gap-2 mb-4">
           ${project.technologies.map(tech => `<span class="px-2 py-1 bg-gray-100 dark:bg-gray-600 rounded text-xs">${tech}</span>`).join('')}
         </div>
-        <a href="${project.link}" class="inline-flex items-center text-primary-600 dark:text-primary-400 hover:text-primary-800 dark:hover:text-primary-300 font-medium transition-colors" target="_blank" rel="noopener noreferrer">
+        <a href="${project.link}" class="mt-auto self-start inline-flex items-center text-primary-600 dark:text-primary-400 hover:text-primary-800 dark:hover:text-primary-300 font-medium transition-colors" target="_blank" rel="noopener noreferrer">
           View Project <i class="fas fa-arrow-right ml-2"></i>
         </a>
       </div>
