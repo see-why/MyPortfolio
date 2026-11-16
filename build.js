@@ -106,6 +106,13 @@ async function build() {
       throw new Error('index.html not found');
     }
 
+    // Copy static assets (images)
+    const assetsSrc = path.join(__dirname, 'assets');
+    if (fs.existsSync(assetsSrc)) {
+      fs.cpSync(assetsSrc, path.join(__dirname, 'dist', 'assets'), { recursive: true });
+      console.log('✅ Copied assets');
+    }
+
     // List all files in dist for verification
     console.log('📋 Files in dist directory:');
     const listFiles = (dir, prefix = '') => {

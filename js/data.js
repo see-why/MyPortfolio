@@ -57,6 +57,13 @@ const experiences = [
 
 const projects = [
   {
+    title: 'Shift Case',
+    description: 'A VS Code extension that toggles selected text, or the word at the cursor, between UPPERCASE and lowercase with a single keybinding. Published on the VS Code Marketplace.',
+    technologies: ['TypeScript', 'VS Code API', 'GitHub Actions'],
+    image: 'https://raw.githubusercontent.com/BitByAndy/shift_case/main/images/shift-case-demo.gif',
+    link: 'https://marketplace.visualstudio.com/items?itemName=bitbyandy.shift-case'
+  },
+  {
     title: 'Maze Runner',
     description: 'An interactive Python application that dynamically generates and solves mazes using depth-first search algorithms, featuring real-time visualization of both the maze creation and solving processes.',
     technologies: ['Python', 'TKinter', 'UnitTest'],
