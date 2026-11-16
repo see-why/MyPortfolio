@@ -45,7 +45,7 @@ To change what the site says (projects, skills, experience), edit `js/data.js`.
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/) 20 or newer, with npm
+- [Node.js](https://nodejs.org/) 18 or newer, with npm
 - Optional: [ImageMagick](https://imagemagick.org/) 7, only if you regenerate the favicons
 
 ### Setup
@@ -85,7 +85,7 @@ Other scripts:
 ### Linting
 
 ```bash
-npx stylelint "**/*.{css,scss}"
+npx stylelint --allow-empty-input "**/*.{css,scss}"
 npx hint --telemetry=off .
 ```
 
