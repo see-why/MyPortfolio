@@ -80,7 +80,7 @@ Other scripts:
 | --- | --- |
 | `npm run build` | Builds the site into `dist/` |
 | `npm run deploy` | Publishes `dist/` to the `gh-pages` branch |
-| `npm start` | Serves the project root with live reload, without building |
+| `npm start` | Serves the unbuilt source with live reload. The contact form does not work in this mode because the EmailJS keys are only injected by the build, so use `npm run dev` instead |
 
 ### Linting
 
